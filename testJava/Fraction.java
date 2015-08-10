@@ -1,6 +1,6 @@
 package testJava;
 
-public class Fraction {
+public class Fraction extends Number implements Comparable<Fraction>{
 	private Integer numerator;
 	private Integer denominator;
 	
@@ -63,14 +63,34 @@ public class Fraction {
 			return false;
 		}
 	}
+	
 	public String toString() {
 		return numerator.toString() + "/" + denominator.toString();
 	}
+	public double doubleValue() {
+		return numerator.doubleValue()/denominator.doubleValue();
+	}
+	public float floatValue() {
+		return numerator.floatValue()/denominator.floatValue();
+	}
+	public int intValue() {
+		return numerator.intValue()/denominator.intValue();
+	}
+	public long longValue() {
+		return numerator.longValue()/denominator.longValue();
+	}
+	public int compareTo(Fraction other) {
+		Integer num1 = this.numerator*other.getDenominator();
+		Integer num2 = this.denominator*other.getNumerator();
+		return num1-num2;
+	}
 	public static void main(String[] args) {
-		Fraction f1 = new Fraction(1, 2);
+		Fraction f1 = new Fraction(1, 2) ;
 		Fraction f2 = new Fraction(2, 3);
 		System.out.println(f1.mul(f2));
 		System.out.println(f1.add(f2));
 		System.out.println(f1.equals(f2));
+		System.out.println(f1.compareTo(f2));
 	}
+	
 }

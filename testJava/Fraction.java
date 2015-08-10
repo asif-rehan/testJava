@@ -54,6 +54,15 @@ public class Fraction {
 		}
 		return n;
 	}
+	public boolean equals(Fraction other) {
+		Integer x = this.numerator*other.getDenominator();
+		Integer y = this.denominator*other.getNumerator();
+		if (x == y) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	public String toString() {
 		return numerator.toString() + "/" + denominator.toString();
 	}
@@ -62,5 +71,6 @@ public class Fraction {
 		Fraction f2 = new Fraction(2, 3);
 		System.out.println(f1.mul(f2));
 		System.out.println(f1.add(f2));
+		System.out.println(f1.equals(f2));
 	}
 }

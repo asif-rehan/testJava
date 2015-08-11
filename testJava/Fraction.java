@@ -46,7 +46,7 @@ public class Fraction extends Number implements Comparable<Fraction>{
 		return mul(other);
 	}
 	private static Integer gcd(Integer m, Integer n) {
-		while (m  % n == 0 ) {
+		while (m  % n != 0 ) {
 			Integer oldm = m;
 			Integer oldn = n;
 			m = oldn;

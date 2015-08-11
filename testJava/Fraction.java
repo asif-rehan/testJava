@@ -18,7 +18,7 @@ public class Fraction extends Number implements Comparable<Fraction>{
 	}
 	public Fraction(Integer num, Integer den) {
 		this.numerator = num;
-		this.denominator = den;
+		this.denominator = den;i
 	}
 	public Fraction(Integer num){
 		this.numerator = num;
